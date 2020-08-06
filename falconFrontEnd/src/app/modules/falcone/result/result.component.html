@@ -1,0 +1,15 @@
+<div *ngIf="searchResult" class="heading">
+    <h1>Finding Falcone!</h1>
+    <h2>Success! Congratulations on finding Falcone</h2>
+    <h3>TimeTaken: {{searchResult?.time_taken}}</h3>
+    <h3>Planet Found: {{searchResult?.planet_name}}</h3>
+    <div>
+        <button routerLink="/falcon/find">Start Again</button>
+    </div>
+    
+</div>
+
+<div *ngIf="!searchResult" class="heading">
+<div>No results to Display</div>
+<button routerLink="/falcon/find">Find Falcone</button>
+</div>

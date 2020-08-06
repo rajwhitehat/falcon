@@ -1,0 +1,77 @@
+
+<div class="heading">
+    <h1>Finding Falcone!</h1>
+    <h1>Select planets you wan to search in</h1>
+</div>
+
+<div class="row">
+    <div class="column">
+        <div>Planet 1</div>
+        <div>
+    <select  [(ngModel)]="findModel['first']['planet']">
+        <option [disabled]="isOptionDisable(planet['name'])" *ngFor="let planet of planetList" [value] ="planet.name">{{planet.name}}</option>
+    </select>
+</div>
+<div>
+    <p *ngFor="let vehicle of vehicleList; let i = index"  >
+        <input [disabled]="isVehicleDisable(vehicle['name']) && findModel['first']['vehicle'] != vehicle.name" [value]="vehicle['name']" [(ngModel)]="findModel['first']['vehicle']" type="radio" id="first{{i}}" name="radio-group1" >
+        <label for="first{{i}}">{{vehicle['name']}}</label>
+      </p>
+</div>
+
+</div>
+    <div class="column">
+        <div>Planet 2</div>
+        <div>
+        <select [(ngModel)]="findModel['second']['planet']">
+            <option [disabled]="isOptionDisable(planet['name'])" *ngFor="let planet of planetList" [value] ="planet.name">{{planet.name}}</option>
+        </select>
+    </div>
+
+    <div>
+        <p *ngFor="let vehicle of vehicleList; let i = index"  >
+            <input [disabled]="isVehicleDisable(vehicle['name']) && findModel['second']['vehicle'] != vehicle.name" [value]="vehicle['name']" [(ngModel)]="findModel['second']['vehicle']" type="radio" id="second{{i}}" name="radio-group2" >
+            <label for="second{{i}}">{{vehicle['name']}}</label>
+          </p>
+    </div>
+    </div>
+
+
+    <div class="column">
+        <div>Planet 3</div>
+        <div>
+    <select [(ngModel)]="findModel['third']['planet']">
+        <option [disabled]="isOptionDisable(planet['name'])"  *ngFor="let planet of planetList" [value] ="planet.name">{{planet.name}}</option>
+    </select>
+</div>
+
+<div>
+    <p *ngFor="let vehicle of vehicleList; let i = index"  >
+        <input [disabled]="isVehicleDisable(vehicle['name']) && findModel['third']['vehicle'] != vehicle.name" [value]="vehicle['name']" [(ngModel)]="findModel['third']['vehicle']" type="radio" id="third{{i}}" name="radio-group3s" >
+        <label for="third{{i}}">{{vehicle['name']}}</label>
+      </p>
+</div>
+
+</div>
+    <div class="column">
+        <div>Planet 4</div>
+        <div>
+
+        <select [(ngModel)]="findModel['fourth']['planet']">
+            <option [disabled]="isOptionDisable(planet['name'])" *ngFor="let planet of planetList" [value] ="planet.name">{{planet.name}}</option>
+        </select>
+        </div>
+
+        <div>
+            <p *ngFor="let vehicle of vehicleList; let i = index"  >
+                <input [disabled]="isVehicleDisable(vehicle['name']) && findModel['fourth']['vehicle'] != vehicle.name" [value]="vehicle['name']" [(ngModel)]="findModel['fourth']['vehicle']" type="radio" id="fourth{{i}}" name="radio-group4" >
+                <label for="fourth{{i}}">{{vehicle['name']}}</label>
+              </p>
+        </div>
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <button (click)="findFalcone()">Find Falcone</button>
+</div>
